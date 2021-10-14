@@ -1,0 +1,1 @@
+<h1>Page Not found, you have to use bad URL</h1>
