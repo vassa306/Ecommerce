@@ -1,16 +1,12 @@
-use @extends('admin.layout.base') @section('title','Product Categories')
+@extends('admin.layout.base') @section('title','Product Categories')
 @section('data-page-id','adminCategories') @section('content')
-<div class="category">
-	<div class="row expanded column">
-		<h2>Categories</h2>
-	</div>
-	@include('includes.message')
 	<!-- at first use isset - test if variable exists in page -->
 
 	<div class="category">
-		<div class="row expanded column">
-			<h2>Product Categories</h2>
-			
+		<div class="row expanded">
+		   <div class="column medium-11">
+				<h2>Product Categories</h2>
+			</div>
 		</div>
 
 		@include('includes.message')
@@ -54,7 +50,7 @@ use @extends('admin.layout.base') @section('title','Product Categories')
 							<th>Name</th>
 							<th>Slug</th>
 							<th>Date Created</th>
-							<th>Action</th>
+							<th width="70">Action</th>
 				 		</tr>
 					</thead>
 					<tbody>
@@ -63,7 +59,7 @@ use @extends('admin.layout.base') @section('title','Product Categories')
 							<td>{{$category['name']}}</td>
 							<td>{{$category['slug']}}</td>
 							<td>{{$category['added']}}</td>
-							<td width="100" class="text-right"><span data-tooltip
+							<td width="70" class="text-right"><span data-tooltip
 								aria-haspopup="true" class="has-tip top"
 								data-disable-hover="false" tabindex="1" title="Add Sub Category">
 									<a data-open="add-subcategory-{{$category['id']}}"><i
@@ -136,7 +132,7 @@ use @extends('admin.layout.base') @section('title','Product Categories')
 					</tbody>
 				</table>
 				{!! $links !!} @else
-				<h3>You have not any category</h3>
+				<h2>You have not any category</h2>
 				@endif
 			</div>
 		</div>
@@ -147,9 +143,10 @@ use @extends('admin.layout.base') @section('title','Product Categories')
 
 
 	<div class="subcategory">
-		<div class="row expanded column">
-			<h2>Sub Categories</h2>
-
+		<div class="row expanded">
+			<div class="column medium-11">
+				<h2>Sub Categories</h2>	
+			</div>
 		</div>
 
 		<!-- at first use isset - test if variable exists in page -->
@@ -167,7 +164,7 @@ use @extends('admin.layout.base') @section('title','Product Categories')
 					<th>Name</th>
 					<th>Slug</th>
 					<th>Date Created</th>
-					<th>Action</th>
+					<th width="50">Action</th>
 				 </tr>
 				</thead>
 					<tbody>
@@ -176,7 +173,7 @@ use @extends('admin.layout.base') @section('title','Product Categories')
 							<td>{{$subcategory['name']}}</td>
 							<td>{{$subcategory['slug']}}</td>
 							<td>{{$subcategory['added']}}</td>
-							<td width="100" class="text-right"><span data-tooltip
+							<td width="50" class="text-right"><span data-tooltip
 								aria-haspopup="true" class="has-tip top"
 								data-disable-hover="false" tabindex="1" title="Edit SubCategory">
 									<a data-open="item-subcategory-{{$subcategory['id']}}"><i
@@ -241,11 +238,11 @@ use @extends('admin.layout.base') @section('title','Product Categories')
 					</tbody>
 				</table>
 				{!! $subcategories_links !!} @else
-				<h3>You have not any subcategory</h3>
+				<h2>You have not any subcategory</h2>
 				@endif
 
 			</div>
 		</div>
 
 	@include('includes.delete-modal') 
-@endsection@endsection
+@endsection
