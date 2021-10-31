@@ -49,6 +49,14 @@ use  <?php $__env->startSection('title','Product Categories'); ?>
 			<div class="small-12 medium-11 column">
 				<?php if(count($categories)): ?>
 				<table class="hover unstriped" data-form="deleteForm">
+					<thead>
+				 		<tr>
+							<th>Name</th>
+							<th>Slug</th>
+							<th>Date Created</th>
+							<th>Action</th>
+				 		</tr>
+					</thead>
 					<tbody>
 						<?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 						<tr>
@@ -153,7 +161,15 @@ use  <?php $__env->startSection('title','Product Categories'); ?>
 		<div class="row expanded">
 			<div class="small-12 medium-11 column">
 				<?php if(count($subcategories)): ?>
-				<table class="hover" data-form="deleteForm">
+				<table class="hover unstriped" data-form="deleteForm">
+				<thead>
+				 <tr>
+					<th>Name</th>
+					<th>Slug</th>
+					<th>Date Created</th>
+					<th>Action</th>
+				 </tr>
+				</thead>
 					<tbody>
 						<?php $__currentLoopData = $subcategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subcategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 						<tr>
