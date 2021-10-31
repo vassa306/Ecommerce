@@ -1,16 +1,12 @@
-use  <?php $__env->startSection('title','Product Categories'); ?>
+ <?php $__env->startSection('title','Product Categories'); ?>
 <?php $__env->startSection('data-page-id','adminCategories'); ?> <?php $__env->startSection('content'); ?>
-<div class="category">
-	<div class="row expanded column">
-		<h2>Categories</h2>
-	</div>
-	<?php echo $__env->make('includes.message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 	<!-- at first use isset - test if variable exists in page -->
 
 	<div class="category">
-		<div class="row expanded column">
-			<h2>Product Categories</h2>
-			
+		<div class="row expanded">
+		   <div class="column medium-11">
+				<h2>Product Categories</h2>
+			</div>
 		</div>
 
 		<?php echo $__env->make('includes.message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -54,7 +50,7 @@ use  <?php $__env->startSection('title','Product Categories'); ?>
 							<th>Name</th>
 							<th>Slug</th>
 							<th>Date Created</th>
-							<th>Action</th>
+							<th width="70">Action</th>
 				 		</tr>
 					</thead>
 					<tbody>
@@ -63,7 +59,7 @@ use  <?php $__env->startSection('title','Product Categories'); ?>
 							<td><?php echo e($category['name']); ?></td>
 							<td><?php echo e($category['slug']); ?></td>
 							<td><?php echo e($category['added']); ?></td>
-							<td width="100" class="text-right"><span data-tooltip
+							<td width="70" class="text-right"><span data-tooltip
 								aria-haspopup="true" class="has-tip top"
 								data-disable-hover="false" tabindex="1" title="Add Sub Category">
 									<a data-open="add-subcategory-<?php echo e($category['id']); ?>"><i
@@ -136,7 +132,7 @@ use  <?php $__env->startSection('title','Product Categories'); ?>
 					</tbody>
 				</table>
 				<?php echo $links; ?> <?php else: ?>
-				<h3>You have not any category</h3>
+				<h2>You have not any category</h2>
 				<?php endif; ?>
 			</div>
 		</div>
@@ -147,9 +143,10 @@ use  <?php $__env->startSection('title','Product Categories'); ?>
 
 
 	<div class="subcategory">
-		<div class="row expanded column">
-			<h2>Sub Categories</h2>
-
+		<div class="row expanded">
+			<div class="column medium-11">
+				<h2>Sub Categories</h2>	
+			</div>
 		</div>
 
 		<!-- at first use isset - test if variable exists in page -->
@@ -167,7 +164,7 @@ use  <?php $__env->startSection('title','Product Categories'); ?>
 					<th>Name</th>
 					<th>Slug</th>
 					<th>Date Created</th>
-					<th>Action</th>
+					<th width="50">Action</th>
 				 </tr>
 				</thead>
 					<tbody>
@@ -176,7 +173,7 @@ use  <?php $__env->startSection('title','Product Categories'); ?>
 							<td><?php echo e($subcategory['name']); ?></td>
 							<td><?php echo e($subcategory['slug']); ?></td>
 							<td><?php echo e($subcategory['added']); ?></td>
-							<td width="100" class="text-right"><span data-tooltip
+							<td width="50" class="text-right"><span data-tooltip
 								aria-haspopup="true" class="has-tip top"
 								data-disable-hover="false" tabindex="1" title="Edit SubCategory">
 									<a data-open="item-subcategory-<?php echo e($subcategory['id']); ?>"><i
@@ -242,12 +239,12 @@ use  <?php $__env->startSection('title','Product Categories'); ?>
 					</tbody>
 				</table>
 				<?php echo $subcategories_links; ?> <?php else: ?>
-				<h3>You have not any subcategory</h3>
+				<h2>You have not any subcategory</h2>
 				<?php endif; ?>
 
 			</div>
 		</div>
 
 	<?php echo $__env->make('includes.delete-modal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
-<?php $__env->stopSection(); ?>@endsection
+<?php $__env->stopSection(); ?>
 <?php echo $__env->make('admin.layout.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\developer2\eshop\gitrepo\ecommerce\resources\views/admin/products/categories.blade.php ENDPATH**/ ?>
