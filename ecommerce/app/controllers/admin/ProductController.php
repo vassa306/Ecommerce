@@ -24,16 +24,16 @@ class ProductController
     
     public function __construct()
     {
-        $total = Category::all()->count();
-        $subtotal = SubCategory::all()->count();
-        $object = new Category();
-        list ($this->categories, $this->links) = paginate(5, $total, $this->table_name, $object);
-        list ($this->subcategories, $this->subcategories_links) = paginate(5, $subtotal, 'sub_categories', new SubCategory);
+        $this->categories = Category::all();
+        
+      //  list ($this->categories, $this->links) = paginate(5, $total, $this->table_name, $object);
+      //   list ($this->subcategories, $this->subcategories_links) = paginate(5, $subtotal, 'sub_categories', new SubCategory);
     }
 
     public function showCreateProductForm()
     {
-        return view('admin/products/create');
+        $categories = $this->categories;
+        return view('admin/products/create', compact('categories'));
     }
 
     public function store()

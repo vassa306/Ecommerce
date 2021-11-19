@@ -31,7 +31,31 @@
 					  	</label>
 					</div>
 				</div>
-			</div>		
+			</div>
+			
+			<div class ="small-12 medium-11">
+				<div class="row expanded">
+					<div class="small-12 medium-6 column">
+					  	<label>Product Category:
+					  		<select name = "category" id="product-category">
+					  			<option value="{{ \app\classes\Request::old('post','category')?:"" }}">
+					  			 	{{ \app\classes\Request::old('post','category')?:"Select Category" }}
+					  			</option>
+					  			 @foreach ($categories as $category)
+					  			 	<option value="{{ $category->id }}"> {{ $category->name }}</option>
+					  			 @endforeach
+					  		</select>
+					  	</label>
+					</div>
+			
+					<div class="small-12 medium-6 column">
+					  	<label>Product SubCategory:
+					  		<input type="text" name="price" placeholder="Product Subcategory" 
+					  		value="{{ \app\classes\Request::old('post','price') }}">
+					  	</label>
+					</div>
+				</div>
+			</div>			
 			
 		</form>
 
