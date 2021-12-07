@@ -32,7 +32,7 @@
 					</div>
 				</div>
 			</div>
-			
+			// how to work with select element:
 			<div class ="small-12 medium-11">
 				<div class="row expanded">
 					<div class="small-12 medium-6 column">
