@@ -1,0 +1,9 @@
+{
+	"author": "jurena Vaclav",
+	"description": "ACME Ecommerce webstore",
+	"private": true,
+	"dependencies": {
+		"gulp": "~3.9",
+		"laravel-elixir": "~5.0.0"
+	}
+}
