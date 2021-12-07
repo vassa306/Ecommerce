@@ -7,7 +7,9 @@ $(document).foundation();
 		switch($("body").data("page-id")){
 		case 'home':
 			break;
-		
+		case 'adminProducts':
+			ACMESTORE.admin.changeEvent();
+		break;
 		case 'adminCategories':
 			ACMESTORE.admin.update();
 			ACMESTORE.admin.delete();

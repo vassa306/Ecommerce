@@ -73,6 +73,38 @@ this.inputs.eq(t).attr({id:i,max:this.options.end,min:this.options.start,step:th
 
 (function(){
 	'use strict';
+	/*calling of main global object*/
+	ACMESTORE.admin.changeEvent = function(){
+		$('#product-category').on('change',function(){
+			var category_id = $('#product-category' + ' option:selected').val();
+			$('#product-subcategory').html('Select Subcategory');
+			
+			$.ajax({
+				type:'GET',
+				url: '/admin/category/'+ category_id + '/selected',
+				data: {category_id: category_id},
+				success: function(response){
+				var subcategories = jQuery.parseJSON(response);
+				if(subcategories.length){
+					$.each(subcategories,function(key,value){
+						$('#product-subcategory').append('<option value="' + value.id + '">'+ value.name + '</option>')
+						console.log(subcategories);
+						
+						
+					});
+					}else{
+						$('#product-subcategory').append('<option value="">No record found</option>')
+					}
+				} 
+				
+			})
+		})
+		
+	}
+})();	
+
+(function(){
+	'use strict';
 	ACMESTORE.admin.update = function(){
 		
 	//update product category	
@@ -160,7 +192,9 @@ $(document).foundation();
 		switch($("body").data("page-id")){
 		case 'home':
 			break;
-		
+		case 'adminProducts':
+			ACMESTORE.admin.changeEvent();
+		break;
 		case 'adminCategories':
 			ACMESTORE.admin.update();
 			ACMESTORE.admin.delete();

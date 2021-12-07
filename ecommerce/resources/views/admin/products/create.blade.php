@@ -32,7 +32,7 @@
 					</div>
 				</div>
 			</div>
-			// how to work with select element:
+			
 			<div class ="small-12 medium-11">
 				<div class="row expanded">
 					<div class="small-12 medium-6 column">
@@ -50,8 +50,11 @@
 			
 					<div class="small-12 medium-6 column">
 					  	<label>Product SubCategory:
-					  		<input type="text" name="price" placeholder="Product Subcategory" 
-					  		value="{{ \app\classes\Request::old('post','price') }}">
+					  		<select name = "subcategory" id="product-subcategory">
+					  			<option value="{{ \app\classes\Request::old('post','subcategory')?:"" }}">
+					  			 	{{ \app\classes\Request::old('post','category')?:"Select subcategory" }}
+					  			</option>
+					  		</select>
 					  	</label>
 					</div>
 				</div>
