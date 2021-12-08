@@ -47,6 +47,20 @@
 					  		</select>
 					  	</label>
 					</div>
+					
+					
+					<div class="small-12 medium-6 column">
+					  	<label>Product Quantity:
+					  		<select name = "quantity">
+					  			<option value="{{ \app\classes\Request::old('post','quantity')?:"" }}">
+					  			 	{{ \app\classes\Request::old('post','quantity')?:"Select Quantity" }}
+					  			</option>
+					  			@for($i=1; $i >= 50; $i++)
+					  				<option value="{{ $i }}">{{ $i }}</option>
+					  			@endfor	
+					  		</select>
+					  	</label>
+					</div>
 			
 					<div class="small-12 medium-6 column">
 					  	<label>Product SubCategory:
@@ -58,7 +72,21 @@
 					  	</label>
 					</div>
 				</div>
-			</div>			
+			</div>		
+			
+			<div class="small-12 medium-6 column">
+					  	<label>Product SubCategory:
+					  		<select name = "subcategory" id="product-subcategory">
+					  			<option value="{{ \app\classes\Request::old('post','subcategory')?:"" }}">
+					  			 	{{ \app\classes\Request::old('post','category')?:"Select subcategory" }}
+					  			</option>
+					  		</select>
+					  	</label>
+					</div>
+				</div>
+			</div>				
+			
+			
 			
 		</form>
 
