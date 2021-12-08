@@ -75,13 +75,7 @@
 			</div>		
 			
 			<div class="small-12 medium-6 column">
-					  	<label>Product SubCategory:
-					  		<select name = "subcategory" id="product-subcategory">
-					  			<option value="{{ \app\classes\Request::old('post','subcategory')?:"" }}">
-					  			 	{{ \app\classes\Request::old('post','category')?:"Select subcategory" }}
-					  			</option>
-					  		</select>
-					  	</label>
+					  	
 					</div>
 				</div>
 			</div>				
@@ -89,6 +83,7 @@
 			
 			
 		</form>
+	</div>
 
 	@include('includes.delete-modal') 
 @endsection
