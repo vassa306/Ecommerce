@@ -55,7 +55,7 @@
 					  			<option value="{{ \app\classes\Request::old('post','quantity')?:"" }}">
 					  			 	{{ \app\classes\Request::old('post','quantity')?:"Select Quantity" }}
 					  			</option>
-					  			@for($i=1; $i >= 50; $i++)
+					  			@for($i=1; $i <= 50; $i++)
 					  				<option value="{{ $i }}">{{ $i }}</option>
 					  			@endfor	
 					  		</select>
@@ -71,17 +71,24 @@
 					  		</select>
 					  	</label>
 					</div>
-				</div>
-			</div>		
+				
 			
 			<div class="small-12 medium-6 column">
-					  	
-					</div>
-				</div>
-			</div>				
-			
-			
-			
+			</br>
+			<div class="input-group">
+                       <span class="input-group-label">Product Image:</span>
+                       <input type="file" name="productImage" class="input-group-field">
+                 </div>
+              </div>	
+            <div class="small-12 column">
+            <label>Description:
+            <textarea name="description" placeholder="Description">{{\app\classes\Request::old('post','description')}}</textarea> 
+            </label>
+            <input type="hidden" name="token" value="{{\app\classes\CSRFToken::_token()}}">
+            <button class="button alert"  type="reset">Reset</button>
+            <input class="button success float-right" type="submit" value="Save Product">
+            </div>
+          </div>   
 		</form>
 	</div>
 
