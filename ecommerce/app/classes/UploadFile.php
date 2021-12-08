@@ -6,7 +6,7 @@ class UploadFile
 
     protected $filename;
 
-    protected $max_filesize;
+    protected $max_filesize=2097152;
 
     protected $extension;
 

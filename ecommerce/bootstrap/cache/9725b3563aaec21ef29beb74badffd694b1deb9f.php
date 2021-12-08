@@ -48,17 +48,52 @@
 					  		</select>
 					  	</label>
 					</div>
+					
+					
+					<div class="small-12 medium-6 column">
+					  	<label>Product Quantity:
+					  		<select name = "quantity">
+					  			<option value="<?php echo e(\app\classes\Request::old('post','quantity')?:""); ?>">
+					  			 	<?php echo e(\app\classes\Request::old('post','quantity')?:"Select Quantity"); ?>
+
+					  			</option>
+					  			<?php for($i=1; $i <= 50; $i++): ?>
+					  				<option value="<?php echo e($i); ?>"><?php echo e($i); ?></option>
+					  			<?php endfor; ?>	
+					  		</select>
+					  	</label>
+					</div>
 			
 					<div class="small-12 medium-6 column">
 					  	<label>Product SubCategory:
-					  		<input type="text" name="price" placeholder="Product Subcategory" 
-					  		value="<?php echo e(\app\classes\Request::old('post','price')); ?>">
+					  		<select name = "subcategory" id="product-subcategory">
+					  			<option value="<?php echo e(\app\classes\Request::old('post','subcategory')?:""); ?>">
+					  			 	<?php echo e(\app\classes\Request::old('post','category')?:"Select subcategory"); ?>
+
+					  			</option>
+					  		</select>
 					  	</label>
 					</div>
-				</div>
-			</div>			
+				
 			
+			<div class="small-12 medium-6 column">
+			</br>
+			<div class="input-group">
+                       <span class="input-group-label">Product Image:</span>
+                       <input type="file" name="productImage" class="input-group-field">
+                 </div>
+              </div>	
+            <div class="small-12 column">
+            <label>Description:
+            <textarea name="description" placeholder="Description"><?php echo e(\app\classes\Request::old('post','description')); ?></textarea> 
+            </label>
+            <input type="hidden" name="token" value="<?php echo e(\app\classes\CSRFToken::_token()); ?>">
+            <button class="button alert"  type="reset">Reset</button>
+            <input class="button success float-right" type="submit" value="Save Product">
+            </div>
+          </div>   
 		</form>
+	</div>
 
 	<?php echo $__env->make('includes.delete-modal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
 <?php $__env->stopSection(); ?>

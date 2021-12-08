@@ -12,7 +12,7 @@
 				aria-hidden="true"></i>&nbsp; Dashboard</a></li>
 		<li><a href="#"><i class="fa fa-users fa-fw" aria-hidden="true"></i>&nbsp;
 				Users</a></li>
-		<li><a href="/admin/product/create"><i class="fa fa-plus fa-fw"
+		<li><a href="/admin/products/create"><i class="fa fa-plus fa-fw"
 				aria-hidden="true"></i>&nbsp; Add Product</a></a></li>
 		<li><a href="manage_inventory"><i class="fa fa-edit fa-fw"
 				aria-hidden="true"></i>&nbsp; Manage Products</a></li>

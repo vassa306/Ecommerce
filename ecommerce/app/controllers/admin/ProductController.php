@@ -8,11 +8,12 @@ use app\models\Category;
 use app\models\SubCategory;
 use app\classes\ValidateRequest;
 use app\classes\Redirect;
+use app\classes\UploadFile;
 
 class ProductController
 {
 
-    public $table_name = 'categories';
+    public $table_name = 'products';
 
     public $categories;
 
@@ -46,21 +47,49 @@ class ProductController
                     'name' => [
                         'required' => true,
                         'minLength' => 3,
+                        'maxLength' => 70,
                         'string' => true,
-                        'unique' => 'categories'
-                    ]
+                        'unique' => '$this->table_name'
+                    ],                     
+                    'price' => [
+                        'required' => true,
+                        'minLength' => 2,
+                        'number' => true,
+                    ],
+                    'quantity'=>[
+                        'required' => true,
+                    ],
+                    'category'=>[
+                        'required' => true,
+                    ],
+                    'subcategory'=>[
+                        'required' => true,
+                    ],
+                    'description'=>[
+                        'required' => true,
+                        'mixed'=>true,
+                        'minLength' => 4,
+                        'maxLength' => 500,
+                    ],
                 ];
                 $validate = new ValidateRequest();
                 $validate->abide($_POST, $rules);
+                
+                $file = Request::get('file');
+                $filename = $file->productImage->name;
+                
+                if (empty($file->productImage->name)) {
+                    $file_error['productImage']=['The product image is required'];
+                }else if (!UploadFile::isImage($filename)){
+                    $file_error['productImage']=['The image has an invalid format, please try again'];
+               }
+                
                 if ($validate->hasError()) {
-                    $errors = $validate->getErrorMsgs();
+                    $response = $validate->getErrorMsgs();
+                    count($file_error) ? $errors = array_merge($response,$file_error):$errors = $response;
                     return view('admin/products/categories', [
                         'categories' => $this->categories,
-                        'links' => $this->links,
                         'errors' => $errors,
-                        'subcategories' => $this->subcategories,
-                        'subcategories_links' => $this->subcategories_links
-                        
                     ]);
                 }
 
