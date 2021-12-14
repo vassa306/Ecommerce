@@ -19,7 +19,7 @@ class UploadFile
      */
     public function getName()
     {
-        return $this->$filename;
+        return $this->filename;
     }
 
     /**
@@ -38,7 +38,7 @@ class UploadFile
             ' '
         ], '-', $name));
         $hash = md5(microtime());
-        $ext = $this->fileExtension();
+        $ext = $this->fileExtension($file);
         $this->filename = "{$name}-{$hash}.{$ext}";
     }
 
@@ -63,7 +63,7 @@ class UploadFile
     public static function checkFileSize($file)
     {
         // create a new static object
-        $fileeObj = new static();
+        $fileObj = new static();
         return $file > $fileObj->max_filesize ? true : false;
     }
 
@@ -78,10 +78,10 @@ class UploadFile
             'bmp',
             'gif'
         );
-        if (! in_array(strtolower($ext), $validExt)) {
+        if (!in_array(strtolower($ext), $validExt)) {
             return false;
         }
-        return $true;
+        return true;
     }
 
     public function path()
@@ -102,11 +102,11 @@ class UploadFile
      *            $new_filename
      * @return NULL/static
      */
-    public static function move($temp_path, $folder, $file, $new_filename)
+    public static function move($temp_path, $folder, $file, $new_filename='')
     {
         $fileObj = new static();
         $ds = DIRECTORY_SEPARATOR;
-        $fileObj->setName($name, $new_filename);
+        $fileObj->setName($file, $new_filename);
         $file_name = $fileObj->getName();
         if (! is_dir($folder)) {
             mkdir($folder, 0777, true);

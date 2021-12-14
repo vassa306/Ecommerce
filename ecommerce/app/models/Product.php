@@ -18,16 +18,15 @@ class Product extends Model
         'category_id',
         'sub_category_id',
         'image_path',
-        'quantity',
-        
+        'quantity'
     ];
 
     protected $dates = [
         'deleted_at'
     ];
 
-    public function transform($data)
-    {
+    public function transform($data){
+   
         $products = [];
         foreach ($data as $item) {
             $added = new Carbon($item->created_at);
@@ -35,6 +34,7 @@ class Product extends Model
                 'id' => $item->id,
                 'name' => $item->name,
                 'price' => $item->price,
+                'quantity' => $item->quantity,
                 'description' => $item->description,
                 'category_id' => $item->category_id,
                 'category_name' => Category::where('id',$item->category_id)->first()->name,
