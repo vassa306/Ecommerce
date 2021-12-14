@@ -12,7 +12,7 @@
 		</div>
 
 		<?php echo $__env->make('includes.message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-		<form method="post" action="/admin/products/create">
+		<form method="post" action="/admin/products/create" enctype="multipart/form-data">
 			<div class ="small-12 medium-11">
 				<div class="row expanded">
 					<div class="small-12 medium-6 column">
@@ -31,13 +31,14 @@
 					  	</label>
 					</div>
 				</div>
-			</div>
+			</div>	
+			
 			
 			<div class ="small-12 medium-11">
 				<div class="row expanded">
 					<div class="small-12 medium-6 column">
 					  	<label>Product Category:
-					  		<select name = "category" id="product-category">
+					  		<select name ="category" id="product-category">
 					  			<option value="<?php echo e(\app\classes\Request::old('post','category')?:""); ?>">
 					  			 	<?php echo e(\app\classes\Request::old('post','category')?:"Select Category"); ?>
 
@@ -68,7 +69,7 @@
 					  	<label>Product SubCategory:
 					  		<select name = "subcategory" id="product-subcategory">
 					  			<option value="<?php echo e(\app\classes\Request::old('post','subcategory')?:""); ?>">
-					  			 	<?php echo e(\app\classes\Request::old('post','category')?:"Select subcategory"); ?>
+					  			 	<?php echo e(\app\classes\Request::old('post','subcategory')?:"Select subcategory"); ?>
 
 					  			</option>
 					  		</select>

@@ -12,7 +12,7 @@
 		</div>
 
 		@include('includes.message')
-		<form method="post" action="/admin/products/create">
+		<form method="post" action="/admin/products/create" enctype="multipart/form-data">
 			<div class ="small-12 medium-11">
 				<div class="row expanded">
 					<div class="small-12 medium-6 column">
@@ -31,13 +31,14 @@
 					  	</label>
 					</div>
 				</div>
-			</div>
+			</div>	
+			
 			
 			<div class ="small-12 medium-11">
 				<div class="row expanded">
 					<div class="small-12 medium-6 column">
 					  	<label>Product Category:
-					  		<select name = "category" id="product-category">
+					  		<select name ="category" id="product-category">
 					  			<option value="{{ \app\classes\Request::old('post','category')?:"" }}">
 					  			 	{{ \app\classes\Request::old('post','category')?:"Select Category" }}
 					  			</option>
@@ -66,7 +67,7 @@
 					  	<label>Product SubCategory:
 					  		<select name = "subcategory" id="product-subcategory">
 					  			<option value="{{ \app\classes\Request::old('post','subcategory')?:"" }}">
-					  			 	{{ \app\classes\Request::old('post','category')?:"Select subcategory" }}
+					  			 	{{ \app\classes\Request::old('post','subcategory')?:"Select subcategory" }}
 					  			</option>
 					  		</select>
 					  	</label>
