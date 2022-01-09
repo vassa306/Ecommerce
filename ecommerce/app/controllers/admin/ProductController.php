@@ -41,6 +41,12 @@ class ProductController extends BaseController
         $links = $this->links;
         return view('admin/products/inventory', compact('products','links'));
     }
+    
+    public function showEditProductForm($id){
+        $categories = $this->categories;
+        $product = Product::where('id',$id)->with(['category','subCategory'])->first();
+        return view('admin/products/edit', compact('product','categories'));
+    }
   
     public function showCreateProductForm()
     {

@@ -25,7 +25,10 @@ $router->map('GET', '/admin/category/[i:id]/selected', 'app\controllers\admin\Pr
 $router->map('GET', '/admin/products/create', 'app\controllers\admin\ProductController@showCreateProductForm', 'create_product_form');
 
 $router->map('POST', '/admin/products/create', 'app\controllers\admin\ProductController@store', 'create_product');
-// router for edit product // 
+// router for show products 
 $router->map('GET', '/admin/products', 'app\controllers\admin\ProductController@show', 'show_products');
 
+//
+$router->map('GET', '/admin/products/[i:id]/edit', 'app\controllers\admin\ProductController@showEditProductForm', 'edit_product_form');
 
+$router->map('POST', '/admin/products/edit', 'app\controllers\admin\ProductController@edit', 'edit_product');
