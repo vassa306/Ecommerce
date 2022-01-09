@@ -31,4 +31,4 @@ $router->map('GET', '/admin/products', 'app\controllers\admin\ProductController@
 //router for edit products
 $router->map('GET', '/admin/products/[i:id]/edit', 'app\controllers\admin\ProductController@showEditProductForm', 'edit_product_form');
 
-$router->map('POST', '/admin/products/edit', 'app\controllers\admin\ProductController@edit', 'edit_product');
+$router->map('POST', '/admin/products/edit'||, 'app\controllers\admin\ProductController@edit', 'edit_product');
