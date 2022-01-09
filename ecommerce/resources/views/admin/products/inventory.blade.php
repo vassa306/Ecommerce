@@ -37,18 +37,18 @@
 				 		</tr>
 					</thead>
 					<tbody>
-						@foreach($products as $product)
-						<tr>
-							<td>
-							<img src="/{{$product['image_path']}}" alt="{{$product['name'] }}" height="40" width="40">
-							</td>
-							<td>{{$product['name']}}</td>
-							<td>{{$product['price']}}</td>
-							<td>{{$product['quantity']}}</td>
-							<td>{{$product['category_name']}}</td>
-							<td>{{$product['sub_category_name']}}</td>
-							<td>{{$product['added']}}</td>
-							<td width="70" class="text-right">
+					@foreach($products as $product)
+							<tr>
+								<td>
+								<img src="/{{$product['image_path']}}" alt="{{$product['name'] }}" height="40" width="40">
+								</td>
+								<td>{{$product['name']}}</td>
+								<td>{{$product['price']}}</td>
+								<td>{{$product['quantity']}}</td>
+								<td>{{$product['category_name']}}</td>
+								<td>{{$product['sub_category_name']}}</td>
+								<td>{{$product['added']}}</td>
+								<td width="70" class="text-right">
 							
 								<span data-tooltip aria-haspopup="true"
 									class="has-tip top" data-disable-hover="false" tabindex="1"
