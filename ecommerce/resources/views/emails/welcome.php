@@ -16,7 +16,7 @@
 			<i>Best Regards<i /></i>
 		
 		</p>
-		<br /> <b>Jurena Vaclav</b> <br /> <i>AcmeStore Salles Manager<i />
+		<br /> <b>Jurena Vaclav</b> <br /> <i>AcmeStore Sales Manager<i />
 	
 	</div>
 </body>
