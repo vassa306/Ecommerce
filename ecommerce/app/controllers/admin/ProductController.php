@@ -228,7 +228,7 @@ class ProductController extends BaseController
                     $temp_file = $file->productImage->tmp_name;
                     $image_path =UploadFile::move($temp_file,"images{$ds}uploads{$ds}products",$filename)->path();
                     unlink($old_image_path);
-                    //save product into databse
+                    //save new product image into databse
                     $product->image_path = $image_path;
                 }
                 $product->save();
