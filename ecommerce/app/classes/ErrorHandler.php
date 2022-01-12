@@ -9,7 +9,10 @@ class ErrorHandler
     {
         $error = "[{$error_number}] An error occured in file {$error_file} on line $error_line: \n <i> $error_message</i>";
         $environment = getenv('APP_ENV');
-        if ($environment === 'local') {
+        if (in_array($environment, [
+            'local',
+            'production'
+        ])) {
             $whoops = new \Whoops\Run();
             $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
             $whoops->register();
@@ -36,7 +39,6 @@ class ErrorHandler
     {
         $mail = new Mail();
         $mail->send($data);
-
         return new static();
     }
 }
