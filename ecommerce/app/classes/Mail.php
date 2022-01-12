@@ -34,7 +34,7 @@ class Mail
 
         $environment = getenv('APP_ENV');
         if ($environment === 'local' || $environment === 'production') {
-            $this->mail->SMTPDebug = 2;
+            $this->mail->SMTPDebug = 1;
 
             // auth info
             $this->mail->Username = getenv('EMAIL_USERNAME');

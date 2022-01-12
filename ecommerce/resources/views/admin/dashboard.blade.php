@@ -12,7 +12,7 @@
 			<input name="product" value="testing"> <input type="file"
 				name="image"> <input type="submit" value="go" name="submit">
 		</form>
-		{{ \app\classes\Request::all()}}
-	</div>
+	   <!-- \app\classes\Request::all()-->  
+		</div>
 </div>
 @endsection
