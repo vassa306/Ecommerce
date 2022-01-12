@@ -148,55 +148,104 @@ class ProductController extends BaseController
     
     
    
-    public function edit($id)
+    public function edit()
     {//var_dump($id);
-        if (Request::has('post')) {
+        if (Request::has('post')){
             $request = Request::get('post');
-            $extra_errors = [];
-//             echo json_encode([
-//                 'success' => 'OK '.__LINE__." category: ".$id//print_r([$validate->hasError() , $duplicate_subcategory , $category],true)
-//             ]);exit;
+            $file_error = [];
             
-            if (CSRFToken::verifyCSRFToken($request->token, false)) {
+            if (CSRFToken::verifyCSRFToken($request->token)){
                 $rules = [
+                    
                     'name' => [
                         'required' => true,
                         'minLength' => 3,
-                        'string' => true,
-                        'unique' => 'categories'
+                        'maxLength' => 70,
+                        'mixed'  => true,
+                        
+                    ],
+                    
+                    'price' => [
+                        'required' => true,
+                        'minLength' => 1,
+                        'number' => true
+                    ],
+                    
+                    'quantity'=>[
+                        'required' => true
+                    ],
+                    
+                    'category'=>[
+                        'required' => true
+                    ],
+                    
+                    'subcategory'=>[
+                        'required' => true
+                    ],
+                    
+                    'description'=>[
+                        'required' => true,
+                        'mixed' => true,
+                        'minLength' => 4,
+                        'maxLength' => 500,
                     ]
                 ];
-                $validate = new ValidateRequest();
+                
+                
+                $validate = new ValidateRequest;
                 $validate->abide($_POST, $rules);
-                /*get id from array*/
                 
-                $category = Category::where('id', $id)->exists();
-                if (! $category) {
-                    $extra_errors['name'] = array(
-                        'Invalid Product Category'
-                    );
+                $file = Request::get('file');
+                isset($file->productImage->name)? $filename = $file->productImage->name : $filename = '';
+                
+                
+                if (isset($file->productImage->name) && !UploadFile::isImage($filename)){
+                    $file_error['productImage']=['The image has an invalid format, please try again'];
                 }
                 
-                
-                if ($validate->hasError() || !$category) {
-                    $errors = $validate->getErrorMsgs();
-                    count($extra_errors) ? $response = array_merge($errors, $extra_errors) : $response = $errors;
-                    header('HTTP/1.1 422 Unprocessable Entity', true, 422);
-                    echo json_encode($response);
-                    exit();
+                if ($validate->hasError()) {
+                    $response = $validate->getErrorMsgs();
+                    count($file_error) ? $errors = array_merge($response,$file_error) : $errors = $response;
+                    return view('admin/products/create', [
+                        'categories' => $this->categories,
+                        'errors' => $errors,
+                    ]);
                 }
                 
-                Category::where('id', $id)->update([
-                    'name' => $request->name
-                ]);
-                echo json_encode([
-                    'success' => 'Record Updated Sucessfully'
-                ]);
-                exit();
-
+                $product = Product::findorFail($request->product_id);
+                /* the same as where('id',$request->product_id)->first();
+                if(!$product){
+                    throw new \Exception('Invalid Product ID');*/
+                $product->name =$request->name;
+                $product->description =$request->description;
+                $product->price =$request->price;
+                $product->category_id =$request->category;
+                $product->sub_category_id =$request->subcategory;
+                
+                if ($filename) {
+                    $ds = DIRECTORY_SEPARATOR;
+                    $old_image_path = BASE_PATH."{$ds}public{$ds}$product->image_path";
+                    $temp_file = $file->productImage->tmp_name;
+                    $image_path =UploadFile::move($temp_file,"images{$ds}uploads{$ds}products",$filename)->path();
+                    unlink($old_image_path);
+                    //save product into databse
+                    $product->image_path = $image_path;
+                }
+                $product->save();
+                Session::add('success', 'Record Updated');
+                Redirect::to('/admin/products');
                 // process form data
+               
+                Request::refresh();
+                
+                
+                return view('admin/products/create', [
+                    'categories' => $this->categories,
+                    'success' => 'Product edited successfully' ,
+                    
+                ]);
             }
-
+            
             throw new \Exception('Token Mismatch');
         }
         return null;

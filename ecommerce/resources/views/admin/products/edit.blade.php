@@ -39,8 +39,8 @@
 					<div class="small-12 medium-6 column">
 					  	<label>Product Category:
 					  		<select name ="category" id="product-category">
-					  			<option value="{{ \app\classes\Request::old('post','category')?:"" }}">
-					  			 	{{ \app\classes\Request::old('post','category')?:"Select Category" }}
+					  			<option value="{{$product->category->id}}">
+					  			 	{{$product->category->name}}
 					  			</option>
 					  			 @foreach ($categories as $category)
 					  			 	<option value="{{ $category->id }}"> {{ $category->name }}</option>
@@ -53,8 +53,8 @@
 					<div class="small-12 medium-6 column">
 					  	<label>Product Quantity:
 					  		<select name = "quantity">
-					  			<option value="{{ \app\classes\Request::old('post','quantity')?:"" }}">
-					  			 	{{ \app\classes\Request::old('post','quantity')?:"Select Quantity" }}
+					  			<option value="{{$product->quantity}}">
+					  			 	{{ $product->quantity }}
 					  			</option>
 					  			@for($i=1; $i <= 50; $i++)
 					  				<option value="{{ $i }}">{{ $i }}</option>
@@ -66,8 +66,8 @@
 					<div class="small-12 medium-6 column">
 					  	<label>Product SubCategory:
 					  		<select name = "subcategory" id="product-subcategory">
-					  			<option value="{{ \app\classes\Request::old('post','subcategory')?:"" }}">
-					  			 	{{ \app\classes\Request::old('post','subcategory')?:"Select subcategory" }}
+					  			<option value="{{$product->subCategory->id}}">
+					  			 	{{$product->subCategory->name}}
 					  			</option>
 					  		</select>
 					  	</label>
@@ -83,11 +83,11 @@
               </div>	
             <div class="small-12 column">
             <label>Description:
-            <textarea name="description" placeholder="Description">{{\app\classes\Request::old('post','description')}}</textarea> 
+            <textarea name="description" placeholder="Description">{{$product->description}}</textarea> 
             </label>
             <input type="hidden" name="token" value="{{\app\classes\CSRFToken::_token()}}">
-            <button class="button alert"  type="reset">Reset</button>
-            <input class="button success float-right" type="submit" value="Save Product">
+            <input type="hidden" name="product_id" value="{{$product->id}}">
+            <input class="button warning float-right" type="submit" value="Update Product">
             </div>
           </div>   
 		</form>
