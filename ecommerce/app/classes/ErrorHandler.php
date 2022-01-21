@@ -11,7 +11,7 @@ class ErrorHandler
         $environment = getenv('APP_ENV');
         if (in_array($environment, [
             'local',
-            'production'
+        'production'
         ])) {
             $whoops = new \Whoops\Run();
             $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
