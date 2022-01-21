@@ -8,7 +8,7 @@ class IndexController extends BaseController
 
     public function show()
     {
-        // echo "Inside Homepage from controller class";
+        /*// echo "Inside Homepage from controller class";
         $mail = new Mail();
         $data = [
             'to' => 'vassa306@gmail.com',
@@ -23,6 +23,8 @@ class IndexController extends BaseController
             echo "Email sending failed";
         }
     }
-}
-
+}*/         return view('home');
+        }
+    }
+    
 ?>
