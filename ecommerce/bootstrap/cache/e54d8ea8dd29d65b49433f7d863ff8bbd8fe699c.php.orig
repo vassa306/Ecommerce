@@ -37,7 +37,7 @@
 		<li><a href="/admin/users/payments"><i class="fa fa-money fa-fw" aria-hidden="true"></i>&nbsp; Payments</a></li>
 		<li><a href="/"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>&nbsp; Logout</a></li>
 				
->>>>>>> caa4e247f060e5ab03ab09a4c4d1808a300ccd37
+>>>>>>> 3f4f87d0a27e372bccf2c32d641211f38aecd0eb
 	</ul>
 	<!-- End Sidebar -->
 </div><?php /**PATH C:\developer2\eshop\gitrepo\ecommerce\resources\views/includes/admin-sidebar.blade.php ENDPATH**/ ?>

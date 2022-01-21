@@ -1,6 +1,8 @@
 
 <?php
 
+$router = new AltoRouter();
+$router->map('GET', '/', 'app\Controllers\IndexController@show', 'home');
 // admin routes
 $router->map('GET', '/admin', 'app\controllers\admin\DashboardController@show', 'admin_dashboard');
 $router->map('POST', '/admin', 'app\controllers\admin\DashboardController@get', 'admin_form');
