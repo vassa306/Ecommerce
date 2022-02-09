@@ -53,7 +53,7 @@
 					<div class="small-12 medium-6 column">
 					  	<label>Product Quantity:
 					  		<select name = "quantity">
-					  			<option value="{{ \app\classes\Request::old('post','quantity')?:"" }}">
+					  			<option value="{{ \app\classes\Request::old('post','quantity')?:" "}}">
 					  			 	{{ \app\classes\Request::old('post','quantity')?:"Select Quantity" }}
 					  			</option>
 					  			@for($i=1; $i <= 50; $i++)

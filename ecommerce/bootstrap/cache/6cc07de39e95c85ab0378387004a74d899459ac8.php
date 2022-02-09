@@ -14,9 +14,8 @@
 			<input name="product" value="testing"> <input type="file"
 				name="image"> <input type="submit" value="go" name="submit">
 		</form>
-		<?php echo e(\app\classes\Request::all()); ?>
-
-	</div>
+	   <!-- \app\classes\Request::all()-->  
+		</div>
 </div>
 <?php $__env->stopSection(); ?>
 

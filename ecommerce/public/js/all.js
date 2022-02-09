@@ -194,6 +194,7 @@ $(document).foundation();
 			break;
 		case 'adminProducts':
 			ACMESTORE.admin.changeEvent();
+			ACMESTORE.admin.delete();
 		break;
 		case 'adminCategories':
 			ACMESTORE.admin.update();

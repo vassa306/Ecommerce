@@ -54,7 +54,7 @@
 					<div class="small-12 medium-6 column">
 					  	<label>Product Quantity:
 					  		<select name = "quantity">
-					  			<option value="<?php echo e(\app\classes\Request::old('post','quantity')?:""); ?>">
+					  			<option value="<?php echo e(\app\classes\Request::old('post','quantity')?:" "); ?>">
 					  			 	<?php echo e(\app\classes\Request::old('post','quantity')?:"Select Quantity"); ?>
 
 					  			</option>
