@@ -2,7 +2,7 @@
 namespace app\classes;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
-
+//class database
 class Database
 {
 
