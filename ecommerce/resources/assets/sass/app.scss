@@ -2,8 +2,9 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 @import "../bower/vendor/foundation-sites/assets/foundation";
 
-@import "admin/nav";
 @import "global";
+@import "admin/nav";
+@import "pages/nav";
 
 @import "../bower/vendor/motion-ui/src/motion-ui";
 
