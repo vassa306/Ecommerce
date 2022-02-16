@@ -1,0 +1,1 @@
+<h1>Page Not found, you have to use bad URL</h1><?php /**PATH C:\developer2\eshop\gitrepo\ecommerce\resources\views/errors/404.blade.php ENDPATH**/ ?>
