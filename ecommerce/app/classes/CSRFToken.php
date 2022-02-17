@@ -1,6 +1,6 @@
 <?php
 namespace app\classes;
-
+//test
 class CSRFToken
 {
 
