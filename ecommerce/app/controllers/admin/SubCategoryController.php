@@ -133,7 +133,7 @@ class SubCategoryController extends BaseController
         }
         return null;
     }
-    
+    //
     public function delete($id)
     {
         if (Request::has('post')) {
