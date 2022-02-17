@@ -13,8 +13,8 @@ $logo-img-folder: 'images';
 	
 	  .logo{
     background-image: url('/#{$logo-img-folder}/logo.png');
-    width: 180px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
     display: inline-block;
     background-repeat: no-repeat;
     background-size: cover;
