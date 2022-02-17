@@ -1,0 +1,23 @@
+$menu-background: #4768a0;
+
+$logo-img-folder: 'images';
+
+.navigation{
+	
+	z-index: 1000;
+	width: 100%;
+	top: 0;
+	position: fixed;
+	font-family: "Open Sans", sans-serif;
+	//test
+	
+	  .logo{
+    background-image: url('/#{$logo-img-folder}/logo.png');
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+}
