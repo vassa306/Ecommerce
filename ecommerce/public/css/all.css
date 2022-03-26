@@ -3979,7 +3979,8 @@ h4 {
       margin-top: 0.7rem; }
       @media screen and (max-width: 39.9375em) {
         .navigation .top-bar ul.menu.vertical.sub {
-          width: 100% !important; } }
+          width: 100% !important;
+          margin-top: 2.4rem; } }
       .navigation .top-bar ul.menu.vertical.sub li {
         border-bottom: 1px dotted #ffffff; }
         .navigation .top-bar ul.menu.vertical.sub li:last-of-type {

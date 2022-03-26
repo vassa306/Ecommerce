@@ -3,8 +3,8 @@
 <header class="navigation">
     <div class="hide-for-medium">
         <div class="title-bar toggle" data-responsive-toggle="main-menu" data-hide-for="medium">
-            <button class="menu-icon float-right" type="button" data-toggle="main-menu"></button>
-            <a href="/" class="float-left small-logo"></a>
+            <button class="menu-icon" type="button" data-toggle="main-menu"></button>
+            <a href="/" class="float-right small-logo">ACME</a>
         </div>
     
         <div class="top-bar" id="main-menu">

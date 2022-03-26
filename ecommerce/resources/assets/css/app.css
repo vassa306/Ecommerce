@@ -3940,6 +3940,54 @@ h4 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center; }
+  .navigation .toggle {
+    line-height: 3rem;
+    padding: 0 0.5rem 0.3rem 0.5rem;
+    background-color: #515b74; }
+    .navigation .toggle .menu-icon {
+      margin-top: 0.5rem; }
+      .navigation .toggle .menu-icon:focus {
+        outline-style: none; }
+      .navigation .toggle .menu-icon::after {
+        width: 1.8rem; }
+    .navigation .toggle .small-logo {
+      padding-bottom: 0.5rem;
+      display: inline-block;
+      height: 2.6rem;
+      width: 2.6rem; }
+      .navigation .toggle .small-logo:focus {
+        outline-style: none; }
+  .navigation .top-bar {
+    background-color: #667292; }
+    .navigation .top-bar .menu {
+      background-color: #667292; }
+      .navigation .top-bar .menu li {
+        color: #def0fc; }
+        .navigation .top-bar .menu li a {
+          color: #def0fc;
+          text-decoration: none; }
+          @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+            .navigation .top-bar .menu li a {
+              font-size: 0.6rem; } }
+          .navigation .top-bar .menu li a:hover {
+            color: white; }
+          .navigation .top-bar .menu li a:focus {
+            outline-style: none; }
+    .navigation .top-bar ul.menu.vertical.sub {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      margin-top: 0.7rem; }
+      @media screen and (max-width: 39.9375em) {
+        .navigation .top-bar ul.menu.vertical.sub {
+          width: 100% !important;
+          margin-top: 2.4rem; } }
+      .navigation .top-bar ul.menu.vertical.sub li {
+        border-bottom: 1px dotted #ffffff; }
+        .navigation .top-bar ul.menu.vertical.sub li:last-of-type {
+          border-bottom: none; }
+    @media screen and (max-width: 39.9375em) {
+      .navigation .top-bar ul.menu.vertical {
+        text-align: left; } }
 
 .slide-in-down.mui-enter {
   transition-duration: 500ms;

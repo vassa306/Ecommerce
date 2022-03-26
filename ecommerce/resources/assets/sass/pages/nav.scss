@@ -75,6 +75,7 @@ $logo-img-folder: 'images';
 				
 				@include breakpoint(small only){
 				width: 100% !important;
+				margin-top: 2.4rem;
 			}
 				
 				li{
