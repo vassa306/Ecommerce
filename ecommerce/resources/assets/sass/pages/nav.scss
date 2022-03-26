@@ -1,4 +1,4 @@
-$menu-background: #4768a0;
+$menu-background: #667292;
 
 $logo-img-folder: 'images';
 
@@ -20,4 +20,73 @@ $logo-img-folder: 'images';
     background-size: cover;
     background-position: center center;
   }
+
+	.toggle{
+		line-height: 3rem;
+		padding: 0 0.5rem 0.3rem 0.5rem;
+		background-color: darken($menu-background, 10%);
+		.menu-icon{
+			margin-top: 0.5rem;
+			&:focus{
+				outline-style:none;
+			}
+			&::after{
+				width:1.8rem;
+			}
+		}
+		.small-logo{
+			padding-bottom: 0.5rem;
+			display:inline-block;
+			height:2.6rem;
+			width:2.6rem;
+			
+			&:focus{
+				outline-style:none;
+			}
+		}
+	}
+	
+	.top-bar{
+		background-color: $menu-background;
+		.menu{
+			background-color: $menu-background;
+			li{
+				color: #def0fc;
+				a{
+					color: #def0fc;
+					text-decoration: none;
+					@include breakpoint(medium only){
+						font-size: 0.6rem;
+					}
+					&:hover{
+						color:white;
+					}
+					&:focus{
+						outline-style:none;
+					}
+				}
+			}
+		}
+		ul.menu.vertical{
+			&.sub{
+				padding-right: 0.5rem;
+				padding-left: 0.5rem;
+				margin-top: 0.7rem;
+				
+				@include breakpoint(small only){
+				width: 100% !important;
+			}
+				
+				li{
+					border-bottom: 1px dotted #ffffff;
+					&:last-of-type{
+						border-bottom: none;
+					}
+				}
+			}
+			@include breakpoint(small only){
+				text-align: left;
+			}
+		}
+	}
 }
