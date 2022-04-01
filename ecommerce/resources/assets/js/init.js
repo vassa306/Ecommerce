@@ -6,6 +6,7 @@ $(document).foundation();
 		//Switch Pages
 		switch($("body").data("page-id")){
 		case 'home':
+		ACMESTORE.homeslider.initCarousel();
 			break;
 		case 'adminProducts':
 			ACMESTORE.admin.changeEvent();
