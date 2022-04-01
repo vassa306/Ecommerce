@@ -3,6 +3,7 @@
 	'use strict';
 	window.ACMESTORE = {
 	global: {},
-	admin: {}
+	admin: {},
+	homeslider:{}
 	};
 })();

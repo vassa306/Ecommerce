@@ -14,7 +14,8 @@ this.inputs.eq(t).attr({id:i,max:this.options.end,min:this.options.start,step:th
 	'use strict';
 	window.ACMESTORE = {
 	global: {},
-	admin: {}
+	admin: {},
+	homeslider:{}
 	};
 })();
 
@@ -183,6 +184,21 @@ this.inputs.eq(t).attr({id:i,max:this.options.end,min:this.options.start,step:th
     };
 })();
 			
+//create a function for slider
+(function(){
+	'use strict';
+	ACMESTORE.homeslider.initCarousel = function(){
+		$('.hero-slider').slick({
+			slidesToShow:1,
+			autoplay: true,
+			arrows: false,
+			dots: false,
+			fade: true,
+			autoplayHoverPause: true,
+			slideToScroll: 1,
+		});
+	};
+})();
 (function(){
 'use strict'
 $(document).foundation();
@@ -191,6 +207,7 @@ $(document).foundation();
 		//Switch Pages
 		switch($("body").data("page-id")){
 		case 'home':
+		ACMESTORE.homeslider.initCarousel();
 			break;
 		case 'adminProducts':
 			ACMESTORE.admin.changeEvent();
