@@ -23,7 +23,6 @@ bowerPath + '/foundation-sites/dist/js/foundation.min.js',
 bowerPath + '/slick-carousel/slick/slick.min.js',
         'js/acme.js',
         'js/admin/*.js',
-        'js/pages/*.js',
         'js/init.js'
 		], 'public/js/all.js', 'resources/assets'
 	);	
