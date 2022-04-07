@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<link rel="stylesheet" href="/css/all.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body data-page-id="<?php echo $__env->yieldContent('data-page-id'); ?>">
 
